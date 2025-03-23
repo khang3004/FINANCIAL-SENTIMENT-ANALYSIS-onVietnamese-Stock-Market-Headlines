@@ -11,7 +11,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Docker](https://img.shields.io/badge/Docker-supported-2496ED.svg)](https://www.docker.com/)
 
-<a href="#"><img src="https://raw.githubusercontent.com/khuyentran1401/awesome-python-data-science/master/assets/banner.png" width="900px"/></a>
+`<a href="#"><img src="https://raw.githubusercontent.com/khuyentran1401/awesome-python-data-science/master/assets/banner.png" width="900px"/>``</a>`
 
 [📝 Documentation](docs/) |
 [🚀 Installation](#installation) |
@@ -30,28 +30,29 @@
 
 ### System Requirements
 
-| Component | Minimum | Recommended |
-|-----------|---------|-------------|
-| CPU | Intel Core i5/AMD Ryzen 5 | Intel Core i7/AMD Ryzen 7 |
-| RAM | 16GB | 32GB |
-| GPU | NVIDIA GTX 1660 6GB | NVIDIA RTX 3060 12GB |
-| Storage | 50GB SSD | 100GB NVMe SSD |
-| OS | Ubuntu 20.04/Windows 10 | Ubuntu 22.04/Windows 11 |
+| Component | Minimum                   | Recommended               |
+| --------- | ------------------------- | ------------------------- |
+| CPU       | Intel Core i5/AMD Ryzen 5 | Intel Core i7/AMD Ryzen 7 |
+| RAM       | 16GB                      | 32GB                      |
+| GPU       | NVIDIA GTX 1660 6GB       | NVIDIA RTX 3060 12GB      |
+| Storage   | 50GB SSD                  | 100GB NVMe SSD            |
+| OS        | Ubuntu 20.04/Windows 10   | Ubuntu 22.04/Windows 11   |
 
 ### 📦 Core Dependencies
 
-| Package | Version | Purpose |
-|---------|---------|---------|
-| Python | ≥3.8 | Core runtime environment |
-| CUDA | ≥11.0 | GPU acceleration framework |
-| cuDNN | ≥8.0 | Deep learning on NVIDIA GPUs |
-| PyTorch | ≥2.1.0 | Deep learning framework |
-| TensorFlow | ≥2.12.0 | Machine learning platform |
-| MongoDB | ≥4.4 | Database management |
+| Package    | Version  | Purpose                      |
+| ---------- | -------- | ---------------------------- |
+| Python     | ≥3.8    | Core runtime environment     |
+| CUDA       | ≥11.0   | GPU acceleration framework   |
+| cuDNN      | ≥8.0    | Deep learning on NVIDIA GPUs |
+| PyTorch    | ≥2.1.0  | Deep learning framework      |
+| TensorFlow | ≥2.12.0 | Machine learning platform    |
+| MongoDB    | ≥4.4    | Database management          |
 
 ### 🔧 Key Python Packages
 
 #### Machine Learning & Deep Learning
+
 ```python
 torch>=2.1.0
 tensorflow>=2.12.0
@@ -61,6 +62,7 @@ transformers>=4.30.0
 ```
 
 #### NLP & Vietnamese Language Processing
+
 ```python
 underthesea>=6.8.0
 vncorenlp>=1.0.3
@@ -70,6 +72,7 @@ nltk>=3.8.1
 ```
 
 #### Data Processing & Analysis
+
 ```python
 numpy>=1.23.5
 pandas>=1.5.0
@@ -78,6 +81,7 @@ seaborn>=0.12.0
 ```
 
 #### Development Tools
+
 ```python
 black>=22.0  # Code formatting
 flake8>=4.0  # Code linting
@@ -109,13 +113,13 @@ RUN apt-get update && apt-get install -y \
 
 ### 📊 Supported Platforms & Versions
 
-| Platform | Version | Status |
-|----------|---------|--------|
-| Ubuntu | 20.04/22.04 | ✅ Fully Supported |
-| Windows | 10/11 | ✅ Fully Supported |
-| macOS | Big Sur+ | ⚠️ CPU Only |
-| Docker | ≥20.10 | ✅ Fully Supported |
-| WSL2 | Latest | ✅ Fully Supported |
+| Platform | Version     | Status             |
+| -------- | ----------- | ------------------ |
+| Ubuntu   | 20.04/22.04 | ✅ Fully Supported |
+| Windows  | 10/11       | ✅ Fully Supported |
+| macOS    | Big Sur+    | ⚠️ CPU Only      |
+| Docker   | ≥20.10     | ✅ Fully Supported |
+| WSL2     | Latest      | ✅ Fully Supported |
 
 ### 🔄 Version Control & CI/CD
 
@@ -149,6 +153,7 @@ RUN apt-get update && apt-get install -y \
 ### 📂 Raw Data (`data_1/`)
 
 #### 📰 News Headlines Data (`media07_01_2023.xlsx`)
+
 - Financial news headlines and articles from Vietnamese stock market
 - Coverage: Major Vietnamese financial news sources
 - Time period: 2022-2023
@@ -161,6 +166,7 @@ RUN apt-get update && apt-get install -y \
 - Size: 90KB, 328 entries
 
 #### 💹 Stock Price Data (`price07_01_2023.xlsx`)
+
 - Historical stock price information from Vietnamese exchanges
 - Coverage: All listed companies on HOSE, HNX, UPCOM
 - Time period: 2022-2023
@@ -175,6 +181,7 @@ RUN apt-get update && apt-get install -y \
 ### 📊 Processed Data (`data_2/`)
 
 #### 🔄 Combined Working Dataset (`datacw.xlsx`)
+
 - Merged and preprocessed dataset combining news and price data
 - Features:
   - Cleaned and tokenized news headlines
@@ -185,31 +192,35 @@ RUN apt-get update && apt-get install -y \
 - Used for: Model training and validation
 
 #### 📈 Model Evaluation Datasets
+
 1. **Out-of-Sample Testing** (`out_of_sample_data.xlsx`)
+
    - Independent test set for final model evaluation
    - Size: 115KB, 365 samples
    - Carefully curated to prevent data leakage
+2. **Prediction Results**
 
-2. **Prediction Results** 
    - Training predictions (`pred_train.xlsx`)
+
      - Size: 510KB, 2,151 records
      - Contains model predictions on training data
      - Used for model optimization
-   
    - Testing predictions (`pred_test.xlsx`)
+
      - Size: 429KB, 1,668 records
      - Contains model predictions on test data
      - Used for final performance evaluation
 
 ### 📊 Data Statistics
 
-| Dataset | Positive | Negative | Neutral | Total |
-|---------|----------|----------|---------|--------|
-| Training | 45% | 30% | 25% | 2,151 |
-| Testing | 42% | 33% | 25% | 1,668 |
-| Out-of-Sample | 43% | 32% | 25% | 365 |
+| Dataset       | Positive | Negative | Neutral | Total |
+| ------------- | -------- | -------- | ------- | ----- |
+| Training      | 45%      | 30%      | 25%     | 2,151 |
+| Testing       | 42%      | 33%      | 25%     | 1,668 |
+| Out-of-Sample | 43%      | 32%      | 25%     | 365   |
 
 ### 🔍 Data Quality Measures
+
 - ✅ Class balance maintained across splits
 - ✅ No temporal leakage between train/test
 - ✅ Duplicate headlines removed
@@ -217,6 +228,7 @@ RUN apt-get update && apt-get install -y \
 - ✅ Outliers processed
 
 ### 🔄 Data Processing Pipeline
+
 ```mermaid
 graph TD
     A[Raw News Data] --> B[Text Cleaning]
@@ -229,6 +241,7 @@ graph TD
 ```
 
 ### 📈 Data Distribution Visualization
+
 ```python
 import seaborn as sns
 import matplotlib.pyplot as plt
