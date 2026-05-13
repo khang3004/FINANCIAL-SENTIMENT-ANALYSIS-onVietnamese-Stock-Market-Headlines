@@ -1,0 +1,47 @@
+# Default Configuration for Vietnamese Financial Sentiment Analysis
+
+model:
+  name: "phobert"           # Model architecture: phobert, lstm, ml
+  max_length: 125           # Maximum sequence length
+  batch_size: 32            # Training batch size
+  epochs: 10                # Number of training epochs
+  learning_rate: 0.00002    # Learning rate (2e-5)
+  num_labels: 2             # Number of output labels (binary classification)
+
+data:
+  train_path: "data/data_2/datacw.xlsx"
+  test_path: "data/data_2/out_of_sample_data.xlsx"
+  raw_news_path: "data/data_1/media07_01_2023.xlsx"
+  raw_price_path: "data/data_1/price07_01_2023.xlsx"
+
+training:
+  seed: 42                  # Random seed for reproducibility
+  device: "cuda"            # Device: cuda or cpu
+  early_stopping: true      # Enable early stopping
+  patience: 3               # Early stopping patience
+  warmup_steps: 1000        # Learning rate warmup steps
+  weight_decay: 0.01        # Weight decay for regularization
+
+preprocessing:
+  remove_stock_codes: true
+  remove_numbers: true
+  remove_time: true
+  pos_filtering: true       # Keep only N, V, A POS tags
+  stopwords: 
+    - "bán"
+    - "mua"
+    - "cp"
+    - "đăng_ký"
+    - "nghị_quyết"
+    - "cổ_phiếu"
+
+evaluation:
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "auc_roc"
+  save_predictions: true
+  plot_confusion_matrix: true
+  plot_roc_curve: true
